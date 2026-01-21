@@ -8,7 +8,7 @@ phases:
   build:
     commands:
       - echo Building the Docker image...
-      - docker build -t 2048-game .
+      - docker buildx build --platform linux/amd64,linux/arm64 -t 2048-game .
       - echo Tagging the Docker image...
       - docker tag 2048-game:latest 421613839447.dkr.ecr.us-east-1.amazonaws.com/2048-game-repo:latest
   post_build:
