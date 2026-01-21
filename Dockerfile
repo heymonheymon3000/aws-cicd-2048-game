@@ -7,7 +7,5 @@ COPY . /usr/share/nginx/html
 # Expose the default Nginx HTTP port
 EXPOSE 80
 
-
-
 # Start Nginx when the container starts
 CMD ["nginx", "-g", "daemon off;"]
