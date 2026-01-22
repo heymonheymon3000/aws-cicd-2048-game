@@ -71,10 +71,10 @@ artifacts:
     - imagedefinitions.json
 ```
 #### Create Code Build Role
-* AmazonEC2ContainerRegistryFullAccess: Allows CodeBuild to interact with ECR (Elastic Container Registry).
-* AWSCodeBuildDeveloperAccess: Grants permissions for CodeBuild to access build-related resources.
-* AmazonS3FullAccess: Grants access to read/write to S3 buckets (for storing build artifacts).
-* ECSAccessPolicy: Inline Policy to allow CodeBuild to update ECS services:
+* **AmazonEC2ContainerRegistryFullAccess**: Allows CodeBuild to interact with ECR (Elastic Container Registry).
+* **AWSCodeBuildDeveloperAccess**: Grants permissions for CodeBuild to access build-related resources.
+* **AmazonS3FullAccess**: Grants access to read/write to S3 buckets (for storing build artifacts).
+* **ECSAccessPolicy**: Inline Policy to allow CodeBuild to update ECS services:
 
 ![alt text](design/ECSAccessPolicy.png)
 ![alt text](design/codebuild-role.png)
@@ -99,11 +99,22 @@ artifacts:
 ![alt text](design/pipeline-complete.png)
 
 ## ☁️ AWS Architecture
-
+![alt text](design/diagram.png)
 
 ## &rarr; Final Result
 ![alt text](design/task-configuration.png)
+
 ![alt text](design/website-pre-deployment.png)
 
+#### Update index.html by adding name to title
 ![alt text](design/before-push.png)
+
 ![alt text](design/after-push.png)
+
+#### After pushing change to repo the pipeline is triggered
+![alt text](design/pipeline-triggered.png)
+
+#### After deployment the pubic ipaddress changes
+![alt text](design/after-task-configuration.png)
+#### The changes are reflected in the new deployment
+![alt text](design/website-post-deployment.png)
